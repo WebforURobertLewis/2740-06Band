@@ -1,0 +1,106 @@
+*{
+        max-width: 75rem;
+}
+header, nav, main, footer {
+        max-width: 1200px;
+        margin: auto;
+}
+
+/*----------- BODY --------------*/
+
+
+
+/*----------- HEADER --------------*/
+header{
+        padding-bottom: 0;
+}
+
+
+/*----------- NAVIGATION --------------*/
+
+nav ul li {width: auto;}
+nav ul li:first-child a {border-left: 1px solid #777;}
+nav ul li:last-child a {border-right: 1px solid #777;}
+nav ul li a{padding: .5rem 1rem;}
+
+
+
+nav { 
+        float: right;
+        margin-right: 0;
+        width: auto;
+        button{
+                display: none;
+                
+            }
+        ul, ul.classOpen{
+                position: relative;
+                margin-right: -10%;
+                width: 100%;
+                display: flex;
+                margin-left: 0;
+                right:0;
+                
+                margin-bottom: 0;
+
+                li a{
+                        border-bottom: none;
+                        width: 100%;
+                        margin: 0;
+                        width: auto;
+                }
+                ul#navMenu{
+                        text-align: right;
+                        justify-content: right;
+                        right: 0;
+                        width: auto;
+                        
+                }
+                ul#navMenu.classOpen{
+                        position: relative; //moves menu over to right when button is active
+                }
+        }
+
+    }
+        nav ul li.active a{
+            background-color: lighten($primaryColor, 5%);
+            color: lighten($secondaryColor, 40%);
+            
+        }
+        ul#navMenu.classOpen{
+                z-index: 1;
+                width: 100%;
+                right: 0;
+                top: 5%;
+            }
+            ul#navMenu{
+                    margin-right: -25px;
+                    border: none;
+            }
+/*----------- MAIN --------------*/
+main section.clip{
+      
+        min-width: fit-content;
+        min-height: initial;
+        column-count: 4;
+        clear: both;
+        flex-direction: column;
+        max-width: 1200px;
+        margin: auto;
+        contain: content;
+        p{
+                padding:0;
+
+        }
+        figure{
+                padding-inline: 3%;
+                margin: 0;
+                height: fit-content;
+                
+        }
+    }
+
+        
+
+/*----------- FOOTER --------------*/
+    

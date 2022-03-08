@@ -1,0 +1,231 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; max-width: 1200px;}
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+
+/*----------- BODY --------------*/
+body {
+    font-size: 16px;
+    font-family: 'Dosis', sans-serif;
+    background-color: $primaryColor;
+}
+
+#logo{
+    background-image: url(/images/RealityAttackHeader.jpg);
+    mix-blend-mode: difference;
+    background-blend-mode: difference;
+    
+
+
+}
+/*----------- HEADER --------------*/
+header {
+    padding: .5rem 2%;
+    background-color: lighten($primaryColor, 10%);
+    color: rgb(214, 127, 14);
+}
+ header h1 h2{
+     width: 100%;
+    margin: 0;
+
+}
+header img{
+    margin-left: 1%;
+}
+
+header h1 {margin: 0;
+text-align: center;}
+header h2 {
+    text-align: center;
+    margin: 0; 
+    font-weight: normal;}
+
+/*----------- NAVIGATION --------------*/
+nav { 
+    button{
+        position: absolute;
+        padding: .5rem;
+        background-color: transparent;
+        border: none;
+        font-size: 1.5rem;
+        color: lighten($primaryColor, 80%);
+        top: 0;
+        right: 0;
+        }
+       
+        //toggle the hamburger menu and the close (X)
+        //hide one to show the other one, and when it is open, reverse them
+        button span:nth-child(1){display: block;}
+        button span:nth-child(2){display: none;}
+        button.classOpen span:nth-child(1){display:none} //dont show me the burger when it's open
+        button.classOpen span:nth-child(2){display: block;}//when it has a class of open, displays as a block
+        //end button
+
+    ul {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    }
+
+    ul.classOpen { //pulls from JavaScript
+        display: block; //opposite of none in ul{display:none}
+    }
+    ul li a {
+    display: block; //must be displayed as a block to apply padding
+    border-bottom: .1px solid #ffffffc7;
+    padding: .9rem 2vw;
+    font-size: .9rem;
+    padding-left: 1rem;
+    background-color: lighten($primaryColor, 80%);
+    text-decoration: none;
+    text-align: center;
+    }
+
+
+    ul li a:hover {
+    background-color: darken($primaryColor, 0%);
+    color: #fff;
+
+    }
+
+}
+    nav ul li.active a{
+        background-color: lighten($primaryColor, 5%);
+        color: lighten($secondaryColor, 40%);
+    }
+/*----------- MAIN --------------*/
+section.background h1{
+    text-align: center;
+    padding-top: 5%;
+    margin-bottom: 0;
+}
+h2#meetBandTxt{
+    text-shadow: 1px 1px 2px $secondaryColor, 0 0 9em $secondaryColor, 0 0 0.2em lighten($primaryColor, 25%);
+    text-align: center;
+    margin: 0;
+    padding-top: 5%;
+}
+section {
+    #imgClip1{
+        float: right;
+        margin-top: 3%;
+        width: 30%;
+        min-width: 198px;
+        height: auto;
+        margin: .2rem;
+        shape-outside: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+
+
+    }
+    #imgClip2{
+        float: right;
+        clip-path: polygon(50% 0%, 68% 26%, 100% 30%, 76% 58%, 85% 100%, 49% 81%, 17% 100%, 25% 59%, 0 30%, 33% 26%);
+        shape-outside: circle(50% at 50% 50%);
+        width: 30%;
+        min-width: 198px;
+        height: auto;
+        flex-wrap: wrap;
+        margin: .2rem;
+
+
+    }
+    #imgClip3{
+        float: right;
+        clip-path: polygon(49% 6%, 86% 4%, 71% 90%, 24% 90%, 10% 5%);
+        shape-outside:polygon(47% 3%, 88% 0, 75% 94%, 20% 94%, 7% 0);;
+        padding:.2%;
+
+        width: 30%;
+        min-width: 198px;
+        height: auto;
+        margin: .2rem;
+
+    }
+    #imgClip4{
+        float: right;
+        shape-outside: polygon(11% 0, 35% 0%, 65% 0%, 86% 0, 69% 55%, 65% 100%, 35% 100%, 30% 55%);
+        clip-path: polygon(38% 34%, 25% 0, 52% 10%, 79% 0, 64% 34%, 65% 100%, 35% 99%);
+        width: 30%;
+        min-width: 198px;
+        height: auto;
+        margin: .2rem;
+    }
+}
+
+
+main :not(section.clip, section.background, section.p, figure.image1, figure.image2, figure.image3, figure.image4){
+    padding: 0 2%;
+
+}
+main img{
+    width: 100%;
+}
+main section :not(main figure, figure.images, main section.concertImages, main img){
+    contain: content; 
+    position: relative; 
+    background-color: $secondaryColor; 
+    width: 100%;
+}
+main{
+    figure.expand{
+    background-color: $primaryColor;
+    transition: background-color 2s;
+}
+    img{
+        contain: content;
+        /*position: fixed;*/
+        width: content;
+        contain: content;
+        margin-top: .1rem;
+        transition: background-color 2s;
+    }
+    h2#meetBandTxt{
+        padding-bottom: 5%;
+        margin-bottom:-1%;
+    }
+}
+main figure:hover {
+    background-color: $secondaryColor;
+
+
+
+    img:not(section){
+        background-color: lighten($secondaryColor, 10%);
+
+    }
+}
+/*
+figure.expand:hover{
+        
+    position: relative;
+ img{
+     position: fixed;
+     contain: content;
+     height: auto;
+     transition: height .4s;
+
+    }   
+}
+*/
+
+/*----------- FOOTER --------------*/
+footer {
+    padding: .5rem 2%;
+    text-align: center;
+    background-color: $primaryColor;
+    color: white;
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
