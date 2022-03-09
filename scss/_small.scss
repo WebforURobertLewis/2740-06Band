@@ -124,7 +124,7 @@ section {
     #imgClip2{
         float: right;
         clip-path: polygon(50% 0%, 68% 26%, 100% 30%, 76% 58%, 85% 100%, 49% 81%, 17% 100%, 25% 59%, 0 30%, 33% 26%);
-        shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(60% at 50% 50%);
         width: 30%;
         min-width: 198px;
         height: auto;
@@ -160,6 +160,13 @@ section {
 main :not(section.clip, section.background, section.p, figure.image1, figure.image2, figure.image3, figure.image4){
     padding: 0 2%;
 
+}
+section.Concertimages figure{
+    width: 100%;
+    height: 0;
+    padding-bottom: 150%;
+    position: relative;
+    margin: 0;
 }
 main img{
     width: 100%;
@@ -198,6 +205,10 @@ main figure:hover {
 
     }
 }
+
+
+
+
 /*
 figure.expand:hover{
         
@@ -222,10 +233,25 @@ footer {
 
 
 
+
+
+main section.background section.clip h2{
+    display: none;
+}
+
+section.Concertimages figure{
+    padding-bottom: 58.3%;
+}
+section.Concertimages figure.expand img.lazy.entered.loaded{
+    padding-bottom: 0;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}
 /*----- Clearfix: Force an Element not to collapse -----*/
 .clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    content: "";
+    display: table;
+    clear: both;
+  }
 
