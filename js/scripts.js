@@ -7,3 +7,4 @@ const x = document.getElementById('burger');
 x.onclick = openMenu
 const container = document.getElementById("burger")
 container.onclick = openMenu;
+
